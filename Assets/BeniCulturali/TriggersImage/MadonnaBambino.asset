@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b8f7969eb0907468513af777f6531d, type: 3}
+  m_Name: MadonnaBambino
+  m_EditorClassIdentifier: 
+  dialogs:
+  - title: Intro
+    orderNum: 0
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu elit
+      placerat, laoreet ante et, porttitor dui. Nam luctus faucibus nulla, sed facilisis
+      eros tincidunt vel. Vestibulum ante ipsum primis in faucibus orci luctus et
+      ultrices posuere cubilia Curae; Suspendisse non commodo velit. In et iaculis
+      lorem. Nunc in eros eu odio maximus facilisis. Praesent sit amet lorem purus
+    animation: {fileID: 11400000, guid: 3718ad1e588a31c4bb728e32f2ec964d, type: 2}
+  - title: Saltone
+    orderNum: 1
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu elit
+      placerat, laoreet ante et, porttitor dui. Nam luctus faucibus nulla, sed facilisis
+      eros tincidunt vel. Vestibulum ante ipsum primis in faucibus orci luctus et
+      ultrices posuere cubilia Curae; Suspendisse non commodo velit. In et iaculis
+      lorem. Nunc in eros eu odio maximus facilisis. Praesent sit amet lorem purus
+    animation: {fileID: 0}
+  - title: Saluti
+    orderNum: 2
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu elit
+      placerat, laoreet ante et, porttitor dui. Nam luctus faucibus nulla, sed facilisis
+      eros tincidunt vel. Vestibulum ante ipsum primis in faucibus orci luctus et
+      ultrices posuere cubilia Curae; Suspendisse non commodo velit. In et iaculis
+      lorem. Nunc in eros eu odio maximus facilisis. Praesent sit amet lorem purus
+    animation: {fileID: 0}

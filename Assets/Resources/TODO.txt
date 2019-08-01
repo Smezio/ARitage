@@ -1,0 +1,10 @@
+TO DO:
+- Metodi per l'input touch sugli oggetti nella scena (da perfezionare)
+
+- BENI CULTURALI:
+	+ Studiare funzionamento del Timeline per la creazione delle singole fasi della presentazione
+	+ Capire dove posizionare il Playable Director (EventSystem)
+	+ Caricare progetto su GitHub
+
+- OPERE AR:
+	+ Risolvere problema della ChromaKey per la trasparenza del video
