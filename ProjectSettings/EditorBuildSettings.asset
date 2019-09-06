@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BeniCulturali.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/OperAR.unity
+    guid: 09651231f0c96e04d9ea78e85d4da51d
+  - enabled: 1
+    path: Assets/Scenes/ARFoundation.unity
+    guid: c78147727cba6cf4888e26e34e078e6c
   m_configObjects: {}
