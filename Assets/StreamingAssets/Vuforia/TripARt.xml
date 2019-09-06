@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
-  <Tracking>
-    <ImageTarget name="PortaDOro" size="0.265000 0.383679" />
-    <ImageTarget name="Madonna_con_bambino" size="1.500000 3.212402" />
-  </Tracking>
-</QCARConfig>

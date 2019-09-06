@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b8f7969eb0907468513af777f6531d, type: 3}
+  m_Name: Madonna
+  m_EditorClassIdentifier: 
+  dialogs:
+  - title: Presentation
+    orderNum: 0
+    type: Animation
+    text: Ehi ciao! Io sono Harry e ti accompagnero in questo viaggio tra i segreti
+      nascosti delle opere di questo museo!
+    animation: {fileID: 11400000, guid: 5bcb07f1ff6c3bf4b8fa78b3e8a8e841, type: 2}
+    interactiveObj: []
+    timelineObjectName: []
+    multipleChoice: {fileID: 0}
+  - title: GenericExplanation0
+    orderNum: 1
+    type: Animation
+    text: "Questa maestosa Madonna col Bambino in trono e' opera dell\u2019artista
+      Vittore Crivelli.\r\nCostituiva la parte centrale di un polittico, ovvero una
+      grande struttura composta da\r\npi\xF9 pannelli dipinti."
+    animation: {fileID: 11400000, guid: e0ae34ea0725c4a4995a09d21185d5f2, type: 2}
+    interactiveObj: []
+    timelineObjectName: []
+    multipleChoice: {fileID: 0}
+  - title: GenericExplanation1
+    orderNum: 2
+    type: Animation
+    text: "Che Vittorio Crivelli fosse goloso di frutta non ci \uA8E4\xE8 dato saperlo,
+      ma sappiamo che amava ornare ogni sua opera con grandiosi festoni di frutta.\nEd
+      ogni singolo frutto nasconde un messaggio..."
+    animation: {fileID: 11400000, guid: 8eae9d98b7dea4e46a54d0b34f8e0899, type: 2}
+    interactiveObj: []
+    timelineObjectName: []
+    multipleChoice: {fileID: 0}
+  - title: SearchFruit
+    orderNum: 3
+    type: Interaction
+    text: 'Riesci a trovarli?
+
+      Cerca la frutta e toccala, ti svelero'' i segreti dietro a questi succosi cibi.'
+    animation: {fileID: 11400000, guid: cbe7bb966c476b54dad628ba8fad5d10, type: 2}
+    interactiveObj:
+    - UvaOutline
+    timelineObjectName:
+    - UvaOutline
+    multipleChoice: {fileID: 0}
+  - title: Grape
+    orderNum: 4
+    type: Interaction
+    text: "Hai trovato un bel grappolo di UVA NERA.\nNei dipinti religiosi questo
+      frutto simboleggia il SANGUE di Ges\xF9 in remissione dei nostri peccati.\nMolto
+      bene, ora cerca le PERE."
+    animation: {fileID: 11400000, guid: 4fd6ebf4c86ba804991ab2832a960e28, type: 2}
+    interactiveObj:
+    - PereOutline
+    timelineObjectName:
+    - UvaModel
+    - PereOutline
+    - UvaOutline
+    multipleChoice: {fileID: 0}
+  - title: Pears
+    orderNum: 5
+    type: Interaction
+    text: "Grande! Ecco le pere!\nCon la sua polpa dolce la pera ha assunto nel tempo
+      un significato positivo: rappresenta tutti noi, ovvero l'UMANITA che discende
+      da Eva.\nBene, ora i\uA8E9l turno dell PESCHE."
+    animation: {fileID: 11400000, guid: 335065d543dda7048b28758009da5a90, type: 2}
+    interactiveObj:
+    - PescaOutline
+    timelineObjectName:
+    - PeraModel
+    - PescaOutline
+    - UvaModel
+    - PereOutline
+    multipleChoice: {fileID: 0}
+  - title: Peach
+    orderNum: 6
+    type: Interaction
+    text: "Eccola!\nNel simbolismo cristiano, la PESCA i\uA8E9l frutto della SALVEZZA,
+      per questo si trova spesso nei dipinti della Vergine con il Bambino.\nAvanti
+      la prossima, ora \uA8E9il turno delle CILIEGIE."
+    animation: {fileID: 11400000, guid: 335065d543dda7048b28758009da5a90, type: 2}
+    interactiveObj:
+    - CiliegieOutline
+    timelineObjectName:
+    - PescaModel
+    - CiliegieOutline
+    - PeraModel
+    - PescaOutline
+    multipleChoice: {fileID: 0}
+  - title: Cherry
+    orderNum: 7
+    type: Interaction
+    text: "Prese! La CILIEGIA \xE8 il frutto del Paradiso, ma si sa: tutto il rosso
+      non son ciliegie!\r\nInfatti spesso, per il colore della sua polpa, rimanda
+      al SANGUE di Gesu'.\nSiamo quasi alla fine, forza! Trova il CETRIOLO."
+    animation: {fileID: 11400000, guid: 335065d543dda7048b28758009da5a90, type: 2}
+    interactiveObj:
+    - CetrioloOutline
+    timelineObjectName:
+    - CiliegiaModel
+    - CetrioloOutline
+    - PescaModel
+    - CiliegieOutline
+    multipleChoice: {fileID: 0}
+  - title: Cucumber0
+    orderNum: 8
+    type: MultiChoice
+    text: 'Eccolo qua, ma ora e'' il momento di testare cosa sai tu.
+
+      Che simbolismo si nasconde secondo te dietro al CETRIOLO?'
+    animation: {fileID: 11400000, guid: 1d77bb7e1bd1e1c4a832cc04e2323a50, type: 2}
+    interactiveObj: []
+    timelineObjectName:
+    - CiliegiaModel
+    - CetrioloOutline
+    multipleChoice: {fileID: 11400000, guid: ca79e91894173bc44808b27710c506cd, type: 2}
+  - title: Cucumber1
+    orderNum: 9
+    type: Interaction
+    text: "Il CETRIOLO \xE8 un frutto che compare spesso nei dipinti con la Vergine
+      Maria perche' fa riferimento proprio alla sua PUREZZA.\nE' arrivato il momento
+      dell'ultimo frutto, trova la MELA!"
+    animation: {fileID: 11400000, guid: 4e36169ace8f12f4ca145c880427bd14, type: 2}
+    interactiveObj:
+    - MelaOutline
+    timelineObjectName:
+    - CetrioloModel
+    - MelaOutline
+    multipleChoice: {fileID: 0}
+  - title: Apple0
+    orderNum: 10
+    type: MultiChoice
+    text: "Eccolo qua , il frutto pi\xF9 importante del quadro.\nMa ora tocca a te!
+      Quale significato nasconde per te questa succosa MELA?"
+    animation: {fileID: 11400000, guid: 1d77bb7e1bd1e1c4a832cc04e2323a50, type: 2}
+    interactiveObj: []
+    timelineObjectName:
+    - CetrioloModel
+    - MelaOutline
+    multipleChoice: {fileID: 11400000, guid: 28ba0cafb51d587438e364973cf095ac, type: 2}
+  - title: Apple1
+    orderNum: 11
+    type: Animation
+    text: "La MELA \uA8E9il simbolo del PECCATO ORIGINALE! Eva ha morso la mela e
+      siamo stati cacciati dal Paradiso; e dicono che la frutta faccia bene!"
+    animation: {fileID: 11400000, guid: 4e36169ace8f12f4ca145c880427bd14, type: 2}
+    interactiveObj: []
+    timelineObjectName:
+    - MelaModel
+    - 
+    multipleChoice: {fileID: 0}
+  - title: End
+    orderNum: 12
+    type: Animation
+    text: "Complimenti, la spiegazione di questo quadro \xE8 finita, hai accresciuto
+      la tua esperienza e conquistato 20 punti!\nCi vediamo alla prossima, ciao!"
+    animation: {fileID: 11400000, guid: d4f60f60fc599f248ba80ea1827955b4, type: 2}
+    interactiveObj: []
+    timelineObjectName: []
+    multipleChoice: {fileID: 0}

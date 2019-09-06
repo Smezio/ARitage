@@ -8,31 +8,73 @@ public class GuideSpeech : ScriptableObject
 {
     [SerializeField] private DialogPhase[] dialogs;
 
-    // Start is called before the first frame update
-    public void CheckOrder()
+    public void CheckDialogs()
     {
         /* Controllo dell'ordine delle fasi */
         try
         {
+            GameObject[] inactiveObj = new GameObject[Resources.FindObjectsOfTypeAll<GameObject>().Length];
+            int count = 0;
+
+            foreach (GameObject temp in Resources.FindObjectsOfTypeAll<GameObject>())
+            {
+                if (!temp.activeSelf)
+                {
+                    temp.SetActive(true);
+                    inactiveObj[count] = temp;
+                    count++;
+                }
+            }
+            
             bool[] positions = new bool[dialogs.Length];
             for (int i = 0; i < positions.Length; i++)
                 positions[i] = false;
 
-            for (int i = 0; i < positions.Length; i++)
+            for (int i = 0; i < dialogs.Length; i++)
             {
+                /* Controllo della enumerazione dei dialoghi */
                 if (dialogs[i].OrderNum < dialogs.Length && dialogs[i].OrderNum >= 0)
                 {
                     if (!positions[dialogs[i].OrderNum])
                         positions.SetValue(true, dialogs[i].OrderNum);
                     else
-                        throw new System.Exception("Numero ordine già esistente. Correggere definendo l'ordinamento [0, " + (dialogs.Length - 1).ToString());
+                        throw new System.Exception("Dialogo \"" + dialogs[i].Title + "\": numero ordine già esistente. Correggere definendo l'ordinamento [0, " + (dialogs.Length - 1).ToString());
                         
                 }
                 else
-                    throw new System.Exception("Numero posizione ordinamento non contenuto nel range permesso. Correggere definendo l'ordinamento [0, " + (dialogs.Length - 1).ToString());
+                    throw new System.Exception("Dialogo \"" + dialogs[i].Title + "\": numero posizione ordinamento non contenuto nel range permesso. Correggere definendo l'ordinamento [0, " + (dialogs.Length - 1).ToString());
+
+                /* Controllo della tipologia dei dialoghi */
+                if (!(dialogs[i].Type.Equals("Animation") || dialogs[i].Type.Equals("Interaction") || dialogs[i].Type.Equals("MultiChoice")))
+                {
+                    throw new System.Exception("Dialogo \"" + dialogs[i].Title + "\": tipologia delle fasi errata. Scegliere tra \"Animation\" o \"Interaction\" o \"MultiChoice\"");
+                }
+
+                /* Controllo degli oggetti interagibili */
+                if (!(dialogs[i].InteractiveObject.Length == 0 && !(dialogs[i].Type.Equals("Interaction"))) &&
+                    !(dialogs[i].InteractiveObject.Length != 0 && dialogs[i].Type.Equals("Interaction")))
+                {
+                    throw new System.Exception("Dialogo \"" + dialogs[i].Title + "\": numero degli oggetti interagibili incoerente con la tipologia del dialogo");
+                }
+
+                /* Controllo nomi degli oggetti interagibili */
+                /*for (int j = 0; j < dialogs[i].InteractiveObject.Length; j++)
+                {
+                    if (!GameObject.Find(dialogs[i].InteractiveObject[j]))
+                        throw new System.Exception("Dialogo \"" + dialogs[i].Title + "\": oggetto interagibile " + dialogs[i].InteractiveObject[j] + " non esiste");
+                }*/
+
+                /* Controllo presenza struttura minigioco */
+                if (dialogs[i].Type.Equals("MultiChoice") && dialogs[i].MultipleChoice == null)
+                {
+                    throw new System.Exception("Dialogo \"" + dialogs[i].Title + "\": assenza della struttura del MultiChoice");
+                }
             }
 
-            Debug.Log("Ordinamento corretto");
+            for (int i = 0; inactiveObj[i] != null; i++)
+                inactiveObj[i].SetActive(false);
+
+            Debug.Log("Dialoghi compilati correttamente");
         }
         catch (System.Exception e)
         {
@@ -68,8 +110,14 @@ public class GuideSpeech : ScriptableObject
     {
         [SerializeField] private string title;
         [SerializeField] private int orderNum;
+        [SerializeField] private string type;
         [TextArea(14, 10)] [SerializeField] private string text;
         [SerializeField] private PlayableAsset animation;
+        [SerializeField] private string[] interactiveObj;
+        [SerializeField] private string[] timelineObjectName;
+
+
+        [SerializeField] private MultiChoiceStruct multipleChoice;
 
         public string Title
         {
@@ -81,14 +129,35 @@ public class GuideSpeech : ScriptableObject
             get { return orderNum; }
         }
 
+        public string Type
+        {
+            get { return type; }
+        }
+
         public string Text
         {
             get { return text; }
+            set { text = value; }
         }
 
         public PlayableAsset Animation
         {
             get { return animation; }
+        }
+
+        public string[] InteractiveObject
+        {
+            get { return interactiveObj; }
+        }
+
+        public string[] TimelineObjectName
+        {
+            get { return timelineObjectName; }
+        }
+
+        public MultiChoiceStruct MultipleChoice
+        {
+            get { return multipleChoice; }
         }
     }
 }
